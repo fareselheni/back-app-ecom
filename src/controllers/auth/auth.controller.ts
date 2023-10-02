@@ -56,8 +56,11 @@ export const login = async (req: Request, res: Response) => {
     const token = jwt.sign({ userId: user._id }, secretKey, {
       expiresIn: tokenExpiration,
     });
+    // Create a user object without the password field
+    const userWithoutPassword = { ...user.toObject() };
+    delete userWithoutPassword.password;
 
-    res.status(200).json({ token });
+    res.status(200).json({ token, userWithoutPassword });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal Server Error' });
