@@ -75,27 +75,6 @@ export const updateProduct = async (
   }
 };
 
-// export const updateProduct = async (
-//   productId: string,
-//   title?: string,
-//   description?: string,
-//   category?: string,
-//   image?:any
-// ) => {
-//   try {
-//     const product = await Product.findByIdAndUpdate(
-//       productId,
-//       { title, description, category,image },
-//       { new: true }
-//     );
-
-//     return product;
-//   } catch (error) {
-//     console.error('Error updating product:', error);
-//     throw error;
-//   }
-// };
-
 export const deleteProduct = async (productId: string) => {
   try {
     // Delete the product by ID

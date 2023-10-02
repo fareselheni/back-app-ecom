@@ -96,7 +96,6 @@ router.get("/productById/:productId", async (req: any, res: any) => {
 });
 
 // Update product by ID
-// Update product by ID
 router.put("/update/:productId", upload.single("image"), async (req: any, res: any) => {
   try {
     const productId = req.params.productId;

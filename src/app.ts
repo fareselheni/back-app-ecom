@@ -3,7 +3,7 @@ import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
 import path from 'path';
-// import * as productRoutes from "./routes/product.routes"
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 const productRoutes = require("./routes/product.routes");
 const authRoutes = require("./routes/auth.routes");
 
@@ -21,7 +21,7 @@ class App {
 
   private database() {
     const uri: string = process.env.MONGODB_URI as string
-    mongoose.connect("mongodb://127.0.0.1:27017/eCom", { useNewUrlParser: true })
+    mongoose.connect(uri, { useNewUrlParser: true })
   }
 
   private routes() {
@@ -36,8 +36,6 @@ class App {
   }
   private staticFiles(){
     this.express.use('/images', express.static(path.join(__dirname, 'public', 'images')));
-    console.log("dirrrr",__dirname)
-
   }
 }
 
