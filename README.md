@@ -7,25 +7,12 @@ Backend project created using Nodejs and typescript
 Use the package manager [Yarn] to install the project.
 
 ```bash
-cd backend
+cd root of the project
 npm install
 ```
 
 ## Usage
 The default port for backend is 3000
-
-# Frontend
-
-Frontend project created using Reactjs 
-
-## Installation
-
-Use the package manager [npm](https://www.npmjs.com/) to install the project.
-
-```bash
-cd frontend
-yarn
-yarn run start
-```
+The default port for mongodb is 27017
 
 Create a new mongoDb database named eCom
